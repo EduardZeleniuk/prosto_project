@@ -1,0 +1,137 @@
+.authorization-form
+
+  .authorization-form__heading
+    font-family: $base-font
+    font-size: 39px
+    font-weight: 700
+    color: #333
+    line-height: 1.2
+    text-align: center
+
+  .authorization-form__wrap-input
+    width: 100%
+    position: relative
+    border-bottom: 2px solid #d9d9d9
+    margin-top: 25px
+
+  .authorization-form__label-input
+    font-family: $base-font
+    font-size: 14px
+    color: #333
+    line-height: 1.5
+    padding-left: 7px
+
+  .authorization-form__input
+    display: block
+    width: 100%
+    height: 55px
+    font-family: $base-font
+    font-size: 16px
+    color: #333
+    line-height: 1.2
+    outline: none
+    background: transparent
+    padding: 0 7px 0 43px
+
+  .authorization-form__focus-input
+    position: absolute
+    display: block
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    pointer-events: none
+
+  .authorization-form__focus-input::after
+    //content: attr(data-symbol)
+    content: '\f007'
+    display: flex
+    font-size: 22px
+    align-items: center
+    justify-content: center
+    position: absolute
+    font-family: FontAwesome
+    color: #adadad
+    height: calc(100% - 20px)
+    bottom: 0
+    left: 0
+    padding-left: 13px
+    padding-top: 3px
+
+  [name="password"] + .authorization-form__focus-input::after
+    content: '\f023'
+
+  .authorization-form__focus-input::before
+    content: ""
+    display: block
+    position: absolute
+    bottom: -2px
+    left: 0
+    width: 0
+    height: 2px
+    background: #7f7f7f
+    transition: all 0.4s
+
+  .authorization-form__input:focus + .authorization-form__focus-input::before
+    width: 100%
+
+  .has-val.authorization-form__input + .authorization-form__focus-input::before
+    width: 100%
+
+  .authorization-form__input:focus + .authorization-form__focus-input::after
+    color: #a64bf4
+
+  .has-val.authorization-form__input + .authorization-form__focus-input::after
+    color: #a64bf4
+
+
+  .authorization-form__wrap-btn
+    display: block
+    width: 100%
+    position: relative
+    z-index: 1
+    border-radius: 25px
+    overflow: hidden
+    margin: 40px auto 0
+    box-shadow: 0 5px 30px 0px rgba(3, 216, 222, 0.2)
+
+  .authorization-form__bg-btn
+    position: absolute
+    z-index: -1
+    width: 200%
+    height: 100%
+    background: rgb(252,0,255)
+    background: linear-gradient(90deg, rgba(252,0,255,1) 0%, rgba(0,219,222,1) 50%, rgba(252,0,255,1) 100%)
+    top: 0
+    left: -100%
+    transition: all 0.4s
+
+  .authorization-form__btn
+    display: flex
+    justify-content: center
+    align-items: center
+    font-family: $base-font
+    font-size: 16px
+    font-weight: 500
+    color: #fff
+    line-height: 1.2
+    text-transform: uppercase
+    padding: 0 20px
+    width: 100%
+    height: 50px
+
+  .authorization-form__wrap-btn:hover .authorization-form__bg-btn
+    left: 0
+
+  .authorization-form__registration-button
+    text-align: center
+    margin-top: 30px
+
+    a
+      font-family: $base-font
+      font-size: 14px
+      line-height: 1.2
+      color: #333
+      text-decoration: none
+      text-transform: uppercase
+

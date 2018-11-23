@@ -1,5 +1,3 @@
-import {auth, GoogleProvider} from '@/services/fireinit.js'
-
 class User {
   constructor (id) {
     this.id = id
@@ -54,13 +52,6 @@ export const actions = {
       commit('setError', error.message, { root: true })
       throw error
     }
-  },
-
-  signInWithGoogle ({commit}) {
-    return new Promise((resolve, reject) => {
-      auth.signInWithRedirect(GoogleProvider)
-      resolve()
-    })
   },
 
   autoLoginUser ({commit}, payload) {

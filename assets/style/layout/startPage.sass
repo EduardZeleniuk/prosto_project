@@ -1,0 +1,22 @@
+.start-page
+
+  .start-page__authorization
+    padding: 30px
+
+  .start-page__image
+    display: none
+
+
+@media screen and (min-width: 768px)
+  .start-page
+    display: flex
+    min-height: 100vh
+
+    .start-page__authorization
+      width: 350px
+
+    .start-page__image
+      display: block
+      width: calc(100% - 350px)
+      background: url("../images/start-page-bg.jpg") no-repeat center
+      background-size: cover

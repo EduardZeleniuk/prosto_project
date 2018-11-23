@@ -1,31 +1,28 @@
 <template>
-    <v-app id="inspire">
-        <v-content>
-            <v-container fluid>
-                <v-layout align-center justify-center>
-                    <v-flex xs12 sm8 md4>
-                        <v-card class="elevation-12">
-                            <v-toolbar dark color="primary">
-                                <v-toolbar-title>Login form</v-toolbar-title>
-                            </v-toolbar>
-                            <v-card-text>
-                                <v-form>
-                                    <v-text-field prepend-icon="person" name="login" label="Login" type="text" v-model="email"></v-text-field>
-                                    <v-text-field id="password" prepend-icon="lock" name="password" label="Password" type="password" v-model="password"></v-text-field>
-                                </v-form>
-                                    <v-btn class="signIn mb-2" primary @click.native="googleSignUp">Google Sign In</v-btn>
-                            </v-card-text>
-                            <v-card-actions>
-                                <v-spacer></v-spacer>
-                                <v-btn color="primary" @click="onSubmit">Log in</v-btn>
-                                <v-btn color="primary" to="/registration">Create account!</v-btn>
-                            </v-card-actions>
-                        </v-card>
-                    </v-flex>
-                </v-layout>
-            </v-container>
-        </v-content>
-    </v-app>
+    <div class="authorization-form">
+        <div class="authorization-form__heading">{{ formHeading }}</div>
+        <div class="authorization-form__wrap-input">
+            <span class="authorization-form__label-input">Email</span>
+            <input class="authorization-form__input" type="text" name="email" v-model="email" placeholder="Your email">
+            <span class="authorization-form__focus-input" data-symbol=""></span>
+        </div>
+        <div class="authorization-form__wrap-input">
+            <span class="authorization-form__label-input">Password</span>
+            <input class="authorization-form__input" type="password" name="password" v-model="password" placeholder="Password">
+            <span class="authorization-form__focus-input" data-symbol="&#xf206;"></span>
+        </div>
+
+        <div class="authorization-form__wrap-btn">
+            <div class="authorization-form__bg-btn"></div>
+            <button class="authorization-form__btn"  @click="onSubmit">
+                Login
+            </button>
+        </div>
+
+        <div class="authorization-form__registration-button">
+            <nuxt-link to="/registration">Create account</nuxt-link>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -33,10 +30,11 @@
     data () {
       return {
         email: '',
-        password: ''
+        password: '',
+        formHeading: 'Login',
       }
     },
-    layout: 'login',
+    layout: 'startPage',
     methods: {
       onSubmit () {
         if (this.email && this.password) {
@@ -53,3 +51,7 @@
     }
   }
 </script>
+
+<style lang="sass">
+
+</style>
