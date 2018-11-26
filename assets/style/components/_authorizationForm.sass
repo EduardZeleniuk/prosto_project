@@ -31,7 +31,7 @@
     line-height: 1.2
     outline: none
     background: transparent
-    padding: 0 7px 0 43px
+    padding: 0 30px 0 43px
 
   .authorization-form__focus-input
     position: absolute
@@ -75,14 +75,25 @@
   .authorization-form__input:focus + .authorization-form__focus-input::before
     width: 100%
 
-  .has-val.authorization-form__input + .authorization-form__focus-input::before
+  .error.authorization-form__input + .authorization-form__focus-input::before
     width: 100%
 
   .authorization-form__input:focus + .authorization-form__focus-input::after
     color: #a64bf4
 
-  .has-val.authorization-form__input + .authorization-form__focus-input::after
+  .error.authorization-form__input + .authorization-form__focus-input::after
     color: #a64bf4
+
+  .error.authorization-form__error-input::after
+    content: "\f06a"
+    font-family: FontAwesome
+    display: block
+    position: absolute
+    color: #f00
+    font-size: 16px
+    bottom: calc((100% - 20px) / 2)
+    transform: translateY(50%)
+    right: 8px
 
 
   .authorization-form__wrap-btn
@@ -134,4 +145,27 @@
       color: #333
       text-decoration: none
       text-transform: uppercase
+
+
+  .authorization-form__errors
+    list-style: none
+    margin: 30px 0 0
+    padding: 0
+
+    li
+      position: relative
+      font-family: $base-font
+      font-size: 11px
+      line-height: 1.2
+      color: #f00
+      padding-left: 15px
+
+      & + li
+        margin-top: 10px
+
+      &::before
+        content: '-'
+        position: absolute
+        top: 0
+        left: 0
 

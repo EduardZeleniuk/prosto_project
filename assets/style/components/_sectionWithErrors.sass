@@ -1,0 +1,30 @@
+.section-with-errors
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  background: #f00
+  padding: 15px 50px 15px 30px
+  transform: translateY(100%)
+  transition: all 0.25s
+  z-index: 10
+
+  &.active
+    transform: translateY(0)
+
+  .section-with-errors-container
+    position: relative
+    font-family: $base-font
+    font-size: 14px
+    line-height: 1.2
+    text-align: center
+    color: #fff
+    padding-left: 15px
+
+  .section-with-errors__close
+    position: absolute
+    top: 15px
+    right: 15px
+    cursor: pointer
+    font-size: 20px
+    color: #fff

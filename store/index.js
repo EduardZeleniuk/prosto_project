@@ -24,3 +24,15 @@ export const mutations = {
     state.error = null
   }
 }
+
+export const actions = {
+  setLoading ({commit}, payload) {
+    commit('setLoading', payload)
+  },
+  setError ({commit}, payload) {
+    commit('setError', payload)
+  },
+  clearError ({commit}) {
+    commit('clearError')
+  }
+}

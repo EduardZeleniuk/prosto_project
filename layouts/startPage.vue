@@ -4,11 +4,12 @@
         <div class="start-page__authorization">
             <nuxt/>
         </div>
+        <sectionWithErrors/>
     </div>
 </template>
 
 <script>
-  import headerSite from '~/components/sectionWithErrors.vue'
+  import sectionWithErrors from '~/components/sectionWithErrors.vue'
 
   export default {
     components: {

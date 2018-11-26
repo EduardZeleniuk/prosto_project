@@ -1,3 +1,6 @@
+import {auth} from '@/services/fireinit.js'
+
+
 class User {
   constructor (id) {
     this.id = id
