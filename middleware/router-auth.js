@@ -7,7 +7,7 @@ export default function({ store, redirect, route }) {
     }
 
     const routeName = route.name == 'login' ? true : false
-    store.state.user.user != null && (routeName || route.name == 'registration') ? redirect('/') : ''
+    store.getters['user/getUser'] != null && (routeName || route.name == 'registration') ? redirect('/') : ''
     if (route.name != 'registration') {
       store.state.user.user == null && (!routeName) ? redirect('/login') : ''
     }

@@ -39,7 +39,7 @@
         password: null,
       }
     },
-    layout: 'startPage',
+    layout: 'authentication',
     methods: {
       checkForm () {
         this.errors = {};
