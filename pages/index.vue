@@ -7,6 +7,13 @@
   import { mapMutations } from 'vuex'
 
   export default {
+    asyncData() {
+      return new Promise((resolve) => {
+        setTimeout(function () {
+          resolve({ name: 'world' })
+        }, 1000)
+      })
+    },
     computed: {
 
     },

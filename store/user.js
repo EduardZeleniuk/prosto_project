@@ -1,5 +1,4 @@
-import {auth} from '@/services/fireinit.js'
-
+import { auth } from '@/services/fireinit.js'
 
 class User {
   constructor (id) {
@@ -29,11 +28,11 @@ export const mutations = {
 
 export const actions = {
 
-  async registerUser ({commit}, {email, password}) {
-    commit('clearError',null, { root: true })
+  async registerUser ({ commit }, { email, password }) {
+    commit('clearError', null, { root: true })
     commit('setLoading', true, { root: true })
     try {
-      const {user} = await auth.createUserWithEmailAndPassword(email, password)
+      const { user } = await auth.createUserWithEmailAndPassword(email, password)
       commit('setUser', new User(user.uid))
       commit('setLoading', false, { root: true })
     } catch (error) {
@@ -43,8 +42,8 @@ export const actions = {
     }
   },
 
-  async loginUser ({commit}, {email, password}) {
-    commit('clearError',null, { root: true })
+  async loginUser ({ commit }, { email, password }) {
+    commit('clearError', null, { root: true })
     commit('setLoading', true, { root: true })
     try {
       const user = await auth.signInWithEmailAndPassword(email, password)
@@ -57,11 +56,11 @@ export const actions = {
     }
   },
 
-  autoLoginUser ({commit}, payload) {
+  autoLoginUser ({ commit }, payload) {
     commit('setUser', new User(payload.uid))
   },
 
-  logoutUser ({commit}) {
+  logoutUser ({ commit }) {
     auth.signOut()
     commit('setUser', null)
   }

@@ -3,7 +3,6 @@ export const state = () => ({
   error: null
 })
 
-
 export const getters = {
   loading (state) {
     return state.loading
@@ -26,13 +25,13 @@ export const mutations = {
 }
 
 export const actions = {
-  setLoading ({commit}, payload) {
+  setLoading ({ commit }, payload) {
     commit('setLoading', payload)
   },
-  setError ({commit}, payload) {
+  setError ({ commit }, payload) {
     commit('setError', payload)
   },
-  clearError ({commit}) {
+  clearError ({ commit }) {
     commit('clearError')
   }
 }
